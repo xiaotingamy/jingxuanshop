@@ -1,0 +1,155 @@
+<scroll-view class="container" scroll-y="true">
+  <view wx:if="{{!openAttr}}">
+    <swiper class="goodsimgs" indicator-dots="true">
+      <swiper-item wx:for="{{gallery}}" wx:key="{{item.id}}">
+        <image src="{{item.img_url}}" background-size="cover"></image>
+      </swiper-item>
+    </swiper>
+    <view class="service-policy">
+      <view class="item">30天无忧退货</view>
+      <view class="item">48小时快速退款</view>
+      <view class="item">满88元免邮费</view>
+    </view>
+    <view class="goods-info">
+      <view class="c">
+        <text class="name">冬眠暖绒四件套</text>
+        <text class="desc">纯棉拉舍尔，被窝享冬眠</text>
+        <text class="price">￥56</text>
+        <view class="brand">
+          <navigator url="../brandDetail/brandDetail">
+            <text>罗莱制造商</text>
+          </navigator>
+        </view>
+      </view>
+    </view>
+    <view class="section-nav section-attr" bindtap="switchAttrPop">
+      <view class="t">请选择规格数量</view>
+      <image class="i" src="../../static/images/address_right.png" background-size="cover"></image>
+    </view>
+    <!-- <view class="section-nav section-act">
+      <view class="t">
+        <view class="label">1个促销:</view>
+        <view class="tag">万圣趴</view>
+        <view class="text">全场满499，额外送糖果</view>
+      </view>
+      <image class="i" src="../../static/images/address_right.png" background-size="cover"></image>
+    </view> -->
+    <view class="comments">
+      <view class="h">
+        <navigator url="../comment/comment">
+          <text class="t">评价(56)</text>
+          <text class="i">查看全部</text>
+        </navigator>
+      </view>
+      <view class="b">
+        <view class="item">
+          <view class="info">
+            <view class="user">
+              <image src="http://yanxuan.nosdn.127.net/8945ae63d940cc42406c3f67019c5cb6.png"></image>
+              <text>m****3</text>
+            </view>
+            <view class="time">2017-12-20 21:09:48</view>
+          </view>
+          <view class="content">
+            商品真的非常好，这个价位买到这么高品质的物品，有一套在商场买的同品牌的，一干大几，可比可比！图片有点失真
+          </view>
+          <view class="imgs">
+            <image class="img" src="https://yanxuan.nosdn.127.net/e0ee6a9804b4c38a3d08c82af741c168.jpg"></image>
+          </view>
+          <!-- <view class="spec">白色 2件</view> -->
+        </view>
+      </view>
+    </view>
+    <view class="goods-attr">
+      <view class="t">商品参数</view>
+      <view class="l">
+        <view class="item" wx:for="{{attribute}}" wx:key="{{item.name}}">
+          <text class="left">{{item.name}}</text>
+          <text class="right">{{item.value}}</text>
+        </view>
+      </view>
+    </view>
+
+    <view class="detail">
+      <import src="../../lib/wxParse/wxParse.wxml" />
+      <template is="wxParse" data="{{wxParseData:goodsDetail.nodes}}" />
+    </view>
+
+
+    <view class="common-problem">
+      <view class="h">
+        <view class="line"></view>
+        <text class="title">常见问题</text>
+      </view>
+      <view class="b">
+        <view class="item" wx:for="{{issueList}}" wx:key="{{item.id}}">
+          <view class="question-box">
+            <text class="spot"></text>
+            <text class="question">{{item.question}}</text>
+          </view>
+          <view class="answer">
+            {{item.answer}}
+          </view>
+        </view>
+      </view>
+    </view>
+
+    <view class="related-goods">
+      <view class="h">
+        <view class="line"></view>
+        <text class="title">大家都在看</text>
+      </view>
+      <view class="b">
+        <view class="item">
+          <navigator url="/pages/goods/goods">
+            <image class="img" src="http://yanxuan.nosdn.127.net/1d545b023598a953c2968c1d5f71473a.jpg?imageView&quality=65&thumbnail=330x330" background-size="cover"></image>
+            <text class="name">冬眠暖绒三件套</text>
+            <text class="price">￥12.00</text>
+          </navigator>
+        </view>
+      </view>
+    </view>
+
+  </view>
+  <view wx:if="{{openAttr}}" class="attr-pop">
+    <view class="img-info">
+      <image class="img" src="http://ac-3yr0g9cz.clouddn.com/6e5176bd6545b72e130a.png"></image>
+      <view class="info">
+        <view class="c">
+          <view class="p">价格：￥{{goods.retail_price}}</view>
+          <view class="a" wx:if="{{productList.length>0}}">已选择：{{checkedSpecText}}</view>
+        </view>
+      </view>
+    </view>
+    <view class="spec-con">
+      <view class="spec-item" wx:for="{{specificationList}}" wx:key="{{item.specification_id}}">
+        <view class="name">{{item.name}}</view>
+        <view class="values">
+          <view class="value {{vitem.checked ? 'selected' : ''}}" bindtap="clickSkuValue" wx:for="{{item.valueList}}" wx:for-item="vitem" wx:key="{{vitem.id}}" data-value-id="{{vitem.id}}" data-name-id="{{vitem.specification_id}}">{{vitem.value}}</view>
+        </view>
+      </view>
+
+      <view class="number-item">
+        <view class="name">数量</view>
+        <view class="selnum">
+          <view class="cut" bindtap="cutNumber">-</view>
+          <input value="{{number}}" class="number" disabled="true" type="number" />
+          <view class="add" bindtap="addNumber">+</view>
+        </view>
+      </view>
+    </view>
+  </view>
+</scroll-view>
+<view class="bottom-btn">
+    <view class="l l-collect {{ openAttr ? 'back' : ''}}" bindtap="closeAttrOrCollect">
+      <image class="icon" src="/static/images/icon_collect.png"></image>
+    </view>
+    <view class="l l-cart">
+      <view class="box">
+        <text class="cart-count">{{cartGoodsCount}}</text>
+        <image bindtap="openCartPage" class="icon" src="/static/images/ic_menu_shoping_nor.png"></image>
+      </view>
+    </view>
+    <view class="c">立即购买</view>
+    <view class="r" bindtap="addToCart">加入购物车</view>
+  </view>

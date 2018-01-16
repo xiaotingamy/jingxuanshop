@@ -1,0 +1,48 @@
+{
+  "pages":[
+    "pages/index/index",
+    "pages/logs/logs",
+    "pages/catalog/catalog",
+    "pages/customer/customer",
+    "pages/shopcart/shopcart",
+    "pages/search/search",
+    "pages/category/category",
+    "pages/goods/goods"
+  ],
+  "window":{
+    "backgroundTextStyle":"light",
+    "navigationBarBackgroundColor": "#fafafa",
+    "navigationBarTitleText": "鲸选",
+    "navigationBarTextStyle":"black"
+  },
+  "tabBar":{
+    "backgroundColor": "#fff",
+    "selectedColor": "#b4282d",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "text": "首页",
+        "iconPath": "static/images/ic_menu_choice_nor.png",
+        "selectedIconPath": "static/images/ic_menu_choice_pressed.png"
+      },
+      {
+        "pagePath": "pages/catalog/catalog",
+        "text": "分类",
+        "iconPath": "static/images/ic_menu_sort_nor.png",
+        "selectedIconPath": "static/images/ic_menu_sort_pressed.png"
+      },
+      {
+        "pagePath": "pages/shopcart/shopcart",
+        "text": "购物车",
+        "iconPath": "static/images/ic_menu_shoping_nor.png",
+        "selectedIconPath": "static/images/ic_menu_shoping_pressed.png"
+      },
+      {
+        "pagePath": "pages/customer/customer",
+        "text": "个人",
+        "iconPath": "static/images/ic_menu_me_nor.png",
+        "selectedIconPath": "static/images/ic_menu_me_pressed.png"
+      }
+    ]
+  }
+}

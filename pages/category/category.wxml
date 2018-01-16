@@ -1,0 +1,43 @@
+<!--pages/category/category.wxml-->
+<view class="container">
+  <view class="cate-nav">
+    <scroll-view scroll-x="true" class="cate-nav-body" style="width: 750rpx;" scroll-left="{{scrollLeft}}">
+      <view class="item active">
+        <view class="name">床品件套</view>
+      </view>
+      <view class="item">
+        <view class="name">被枕</view>
+      </view>
+      <view class="item">
+        <view class="name">家具</view>
+      </view>
+      <view class="item">
+        <view class="name">收纳</view>
+      </view>
+      <view class="item">
+        <view class="name">布艺软装</view>
+      </view>
+      <view class="item">
+        <view class="name">家饰</view>
+      </view>
+      <view class="item">
+        <view class="name">宠物</view>
+      </view>
+    </scroll-view>
+  </view>
+  <scroll-view scroll-y="true" scroll-top="0">
+    <view class="cate-item">
+      <view class="h">
+          <text class="name">MUJI等品牌制造商出品</text>
+          <!-- <text class="desc">描述</text> -->
+      </view>
+      <view class="b">
+          <navigator class="item" url="/pages/goods/goods">
+              <image class="img" src="http://yanxuan.nosdn.127.net/1d545b023598a953c2968c1d5f71473a.jpg?imageView&quality=65&thumbnail=330x330" background-size="cover"></image>
+              <text class="name">冬眠暖绒四件套</text>
+              <text class="price">￥12.00</text>
+          </navigator>
+      </view>
+    </view>
+  </scroll-view>
+</view>

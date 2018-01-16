@@ -1,0 +1,92 @@
+<!--index.wxml-->
+<view class="container">
+  <view class="search-bar" bindtap="toSearch">
+    <view class="bar">
+      <icon type="search" size="15"></icon>
+      <text class="placeholder">搜索商品，共10980件好物</text>
+    </view>
+  </view>
+  <swiper indicator-dots="true" class="swiper-box">
+    <block wx:for="{{imgUrls}}">
+      <swiper-item>
+        <image src="{{item}}" class="slide-image"/>
+      </swiper-item>
+    </block>
+  </swiper>
+  <view class="service-policy">
+    <view class="item">
+      <image src="../../static/images/icon-gou.png" class="icon-service-policy-index"></image>
+      <text class="text">鲸选自营品牌</text>
+    </view>
+    <view class="item">
+      <image src="../../static/images/icon-gou.png"  class="icon-service-policy-index"></image>
+      <text class="text">7天无忧退货</text>
+    </view>
+    <view class="item">
+      <image src="../../static/images/icon-gou.png" class="icon-service-policy-index"></image>
+      <text class="text">48小时快速退款</text>
+    </view>
+  </view>
+  <view class="index-floor">
+    <view class="title">人气推荐</view>
+    <view class="banner-box">
+      <image src="http://yanxuan.nosdn.127.net/ef4480079accfc72802946cddac4bb4e.jpg" class="banner-image"></image>
+    </view>
+    <view class="grid-good">
+      <view class="item">
+        <image src="http://yanxuan.nosdn.127.net/af5c5433fd3ecd41be4f0009811848e2.png?imageView&quality=65&thumbnail=330x330" class="item-image"></image>
+        <view class="tag-wrapper">
+          <text class="tag">限时购</text>
+          <text class="tag">满99减50</text>
+        </view>
+        <text class="name">100%羊毛 男式经典美利奴V领羊毛衫</text>
+        <text class="price">¥299.00</text>
+      </view>
+      <view class="item">
+        <image src="http://yanxuan.nosdn.127.net/8906e05bdae8216c1c4351a03acbee50.png?imageView&quality=65&thumbnail=330x330" class="item-image"></image>
+        <text class="name">100%美利奴澳毛，柔软亲肤内搭精选</text>
+        <text class="price">¥99.00</text>
+      </view>
+    </view>
+    <view class="check-more">
+      <text>查看更多></text>
+    </view>
+  </view>
+  <view class="index-floor">
+    <view class="title">新品推荐</view>
+    <view class="banner-box">
+      <image src="http://yanxuan.nosdn.127.net/ef4480079accfc72802946cddac4bb4e.jpg" class="banner-image"></image>
+    </view>
+    <view class="grid-good">
+      <view class="item">
+        <image src="http://yanxuan.nosdn.127.net/af5c5433fd3ecd41be4f0009811848e2.png?imageView&quality=65&thumbnail=330x330" class="item-image"></image>
+        <view class="tag-wrapper">
+          <text class="tag">限时购</text>
+          <text class="tag">满99减50</text>
+        </view>
+        <text class="name">100%羊毛 男式经典美利奴V领羊毛衫</text>
+        <text class="price">¥299.00</text>
+      </view>
+      <view class="item">
+        <image src="http://yanxuan.nosdn.127.net/99075def2d98018620db85c370595c9d.png?imageView&quality=65&thumbnail=330x330" class="item-image"></image>
+        <text class="name">女式气质短款毛呢大衣</text>
+        <text class="price">¥999.00</text>
+      </view>
+    </view>
+  </view>
+  <view class="bottom-text">
+    <view class="line"></view>
+    <text class="text">更多内容，敬请期待</text>
+    <view class="line"></view>
+  </view>
+  <!-- <view class="userinfo">
+    <button wx:if="{{!hasUserInfo && canIUse}}" open-type="getUserInfo" bindgetuserinfo="getUserInfo"> 获取头像昵称 </button>
+    <block wx:else>
+      <image bindtap="bindViewTap" class="userinfo-avatar" src="{{userInfo.avatarUrl}}" background-size="cover"></image>
+      <text class="userinfo-nickname">{{userInfo.nickName}}</text>
+    </block>
+  </view>
+  <view class="usermotto">
+    <text class="user-motto">{{motto}}</text>
+  </view> -->
+</view>
